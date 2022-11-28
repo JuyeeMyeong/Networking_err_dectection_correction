@@ -43,3 +43,19 @@ print(data)
 data = encode_crc(data)
 print(data)
 print(decode_crc(data))
+
+#CRC test
+data = np.random.randint(0, 2, 16)
+print('Data to transmit =',data)
+data = encode_crc(data)
+print('After data =', data)
+data[np.random.randint(0,len(data))] ^= 1
+data[np.random.randint(0,len(data))] ^= 1
+data[np.random.randint(0,len(data))] ^= 1
+#data[22] ^= 1
+print('Error data =', data)
+result = decode_crc(data)
+if sum(result) != 0:
+    print('An error detected. Remainder =', result)
+else:
+    print('No error detected. Remainder =', result)
