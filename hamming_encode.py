@@ -1,3 +1,4 @@
+import numpy as np
 def encode_hamming(parity_bits, data):
     n = len(data) + parity_bits
     assert 2 ** parity_bits == n + 1
@@ -35,3 +36,11 @@ def encode_hamming(parity_bits, data):
 
     # result
     return code
+
+#Hamming Test
+parity_bits = 3
+data = np.random.randint(0, 2, 4) # generate 4 random data bits
+
+# generate code
+code = encode_hamming(parity_bits, data) # encode here
+print('hamming code', data, '->', code)
