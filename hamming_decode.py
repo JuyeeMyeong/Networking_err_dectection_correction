@@ -53,3 +53,21 @@ def decode_hamming(code):
 
     # result
     return error, data
+
+#Hamming Test
+parity_bits = 3
+data = np.random.randint(0, 2, 4) # generate 4 random data bits
+
+# generate code
+code = encode_hamming(parity_bits, data) # encode here (using 'hamming_encode.py')
+print('hamming code', data, '->', code)
+
+# make error
+code[3] ^= 1
+print('with error', code)
+
+# reconstruct
+error, recon = decode_hamming(code) # decode here
+print('error @', error, '->', recon)
+# hamming code [0 1 1 0] -> [0 0 0 0 1 1 0]
+# with error [0 0 0 1 1 1 0]
