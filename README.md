@@ -20,7 +20,9 @@ If the messege contains m number of data bits, r number of redundant bits are ad
 The r redundatn bits placed at bit positions of powers of 2. (2, 4, 8, 16 ...) 
 
 3. Calculate the values of each redundant bit
+
 **Even parity**: The total number of bits in the message is made even
+
 **Odd parity**: The total number of bits in the message is made odd
 
 Each redundant bit is calculated as the parity based upon its bit position. 
