@@ -35,3 +35,5 @@ Each redundant bit is calculated as the parity based upon its bit position.
 
 
 ### CRC
+Cyclic Redundancy Check (CRC) is a checksum algorithm to detect inconsistency of data (bit errors data transmission). A checksum is attached to the data to help the receiver to detect such errors. 
+
